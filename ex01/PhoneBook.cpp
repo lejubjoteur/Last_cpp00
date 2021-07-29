@@ -32,11 +32,23 @@ void	PhoneBook::addContact()
 	getline(std::cin, darkestSecret);
 
 	if (_nb > 7) {
-		std::cout << "Le repertoire est plein. Nous allons supprimer le plus vieux contact." << std::endl;
-		for (int i = 0; i < 7; i++) {
-			_contact[i] = _contact[i + 1];
+		std::string rep;
+		while (rep != "y" && rep != "n")
+		{
+			std::cout << "Le repertoire est plein. Voulez vous supprimer le plus vieux contact? (y/n)" << std::endl;
+			getline(std::cin, rep);
+			if (std::cin.eof() || rep == "n")
+				break ;
+			else if (rep == "y") {
+				for (int i = 0; i < 7; i++) {
+					_contact[i] = _contact[i + 1];
+				}
+				_contact[7] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+				break ;
+			}
+			rep.clear();
+			std::cin.clear();
 		}
-		_contact[7] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	}
 	else {
 		_contact[_nb] = Contact(firstName, lastName, nickName, phoneNumber, darkestSecret);
@@ -56,8 +68,8 @@ void	PhoneBook::displayRepertory()
 		std::cout << "Le repertoire est vide!" << std::endl;
 		return;
 	}
-	std::cout << " ___________________________________________" << std::endl;
 	std::cout.setf(std::ios::right);
+	std::cout << " -------------------------------------------" << std::endl;
 	while(++i < 4) {
 		std::cout << "|";
 		std::cout.width(10);

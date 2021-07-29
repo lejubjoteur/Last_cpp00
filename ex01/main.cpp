@@ -19,7 +19,7 @@ int		main()
 	std::string cmd;
 	PhoneBook phonebook;
 
-	while (cmd != "EXIT" && cmd != "ADD" && cmd != "SEARCH" && cmd != "EXIT")
+	while (cmd != "EXIT" && cmd != "ADD" && cmd != "SEARCH")
 	{
 		std::cout << "Veuillez entrer la commande ADD, SEARCH ou EXIT." << std::endl;
 		getline(std::cin, cmd);
