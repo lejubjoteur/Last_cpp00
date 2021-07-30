@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClassContact.cpp                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 15:00:20 by qgimenez          #+#    #+#             */
-/*   Updated: 2021/07/28 16:52:58 by user42           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClassContact.hpp"
 
 Contact::Contact()
@@ -40,8 +28,7 @@ void	displayInfo(std::string str) {
 		tmp[9] = '.';
 		tmp.resize(10);
 	}
-	std::cout.width(10);
-	std::cout.fill(' ');
+	std::cout << std::setfill (' ') << std::setw (10);
 	std::cout << tmp << "|";
 }
 
@@ -55,9 +42,9 @@ void	Contact::afficher()
 
 void	Contact::moreInfo()
 {
-	std::cout << "Prenom :" << _firstName << std::endl;
-	std::cout << "Nom :" << _lastName << std::endl;
-	std::cout << "Surnom :" << _nickName << std::endl;
-	std::cout << "Telephone :" << _phoneNumber << std::endl;
-	std::cout << "Secret le plus sombre :" << _darkestSecret << std::endl;
+	std::cout << "First name :" << _firstName << std::endl;
+	std::cout << "Last name :" << _lastName << std::endl;
+	std::cout << "Nickname :" << _nickName << std::endl;
+	std::cout << "Phone number :" << _phoneNumber << std::endl;
+	std::cout << "Darkest secret :" << _darkestSecret << std::endl;
 }

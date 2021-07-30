@@ -72,8 +72,7 @@ void	PhoneBook::displayRepertory()
 	std::cout << " -------------------------------------------" << std::endl;
 	while(++i < 4) {
 		std::cout << "|";
-		std::cout.width(10);
-		std::cout.fill(' ');
+		std::cout << std::setfill (' ') << std::setw (10);
 		std::cout << title[i];
 	}
 	std::cout << "|" << std::endl;
@@ -81,8 +80,7 @@ void	PhoneBook::displayRepertory()
 	while (++i < _nb)
 	{
 		std::cout << "|";
-		std::cout.width(10);
-		std::cout.fill(' ');
+		std::cout << std::setfill (' ') << std::setw (10);
 		std::cout << i << "|";
 		_contact[i].afficher();
 	}

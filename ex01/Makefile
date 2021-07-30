@@ -8,6 +8,9 @@ OBJ = $(SRC:.cpp=.o)
 
 NAME = phonebook
 
+.cpp.o:
+		$(CLANG) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+
 $(NAME): $(OBJ)
 	$(CLANG) $(CFLAGS) $(OBJ) -o ${NAME}
 
